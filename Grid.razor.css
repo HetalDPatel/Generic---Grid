@@ -1,0 +1,151 @@
+﻿
+* {
+    box-sizing: border-box;
+}
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+.gridClass{
+    justify-content:center;
+}
+
+.light {
+    /*Light mode*/
+    --background: white;
+    --font-color: black;
+    --btn-color: #ada8a8;
+    --highlight-2: #e2e3e5;
+    --link: #0366d6;
+    --btn-bgcolor: #ada8a8;
+    --table-border: #c3c3c3;
+    --font-color-hover: #0366d6;
+    --searchbox-bg-color:#fafbfe;
+}
+
+.dark-mode {
+    --background: #2d2d2d;
+    --font-color: white;
+    --btn-color: #e8d8d8;
+    --highlight-2: #414648;
+    --link: #3ca4ff;
+    --btn-bgcolor: #5f5d5d;
+    --table-border: black;
+    --font-color-hover: #0366d6;
+    --searchbox-bg-color: #e2e3e5;
+}
+
+.alert-secondary {
+    background-color: var(--highlight-2);
+    color: var(--font-color);
+
+}
+
+
+a, .btn-link {
+    color: var(--link);
+}
+
+
+.page {
+    border: 1px solid var(--table-border);
+    background-color: var(--background);
+}
+/*Table*/
+.table {
+    position: relative;
+    color: var(--font-color);
+    background-color: var(--background);
+}
+.grid-table {
+    overflow: auto;
+}
+table{
+    border: 1px solid var(--table-border);
+    
+}
+thead{
+
+}
+tr th {
+    border: 1px solid var(--table-border);
+    vertical-align: top;
+}
+tbody {
+    border: 1px solid var(--table-border);
+}
+td {
+    border-bottom: 1px solid var(--table-border);
+    border-top: 1px solid var(--table-border);
+    border-left: 1px solid var(--table-border);
+    border-right: 1px solid var(--table-border);
+}
+
+/* Grid Header*/
+
+.oi {
+    color: var(--font-color);
+}
+
+/* Page Buttons*/
+
+.activeBtn {
+    border-radius: 30px;
+    color: var(--btn-color);
+    background-color: var(--background);
+    border: none;
+    outline: none;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.nonActiveBtn {
+    border-radius: 30px;
+    color: var(--btn-color);
+    background-color: var(--background);
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+button.first-last-btn {
+    border-radius: 30px;
+    color: var(--btn-color);
+    background-color: var(--background);
+    border: none;
+    outline: none;
+    font-size: 20px;
+    margin: 0;
+    font-size: 30px;
+}
+button.prev-next-btn {
+    border-radius: 30px;
+    color: var(--btn-color);
+    background-color: var(--background);
+    border: none;
+    outline: none;
+    font-size: 30px;
+}
+button:hover, .activeBtn:hover, .nonActiveBtn:hover {
+    border-radius: 30px;
+    color: var(--font-color-hover);
+    background-color: var(--btn-bgcolor);
+    border: none;
+    outline: none;
+    text-underline-position: below;
+}
+.totalPageDisplay{
+    text-align:right;
+    color:#3fa2f4;
+    font-size:0.9rem;
+    margin-left:20px;
+    float:right;
+    margin-right:5px;
+}
+button.filtericon {
+    border: none;
+    border-radius: 0px;
+    background-color: var(--background);
+    outline:none;
+}
+  

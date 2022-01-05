@@ -1,0 +1,101 @@
+﻿@typeparam TItems
+
+
+@if (Search)
+{
+<div class="input-group">
+    @*//<button class="btn btn-info oi oi-magnifying-glass" @onclick="AllowSearch"></button>
+    @if (IsAllowSearch)
+    {*@
+        <div class="searchBox">
+            <input type="text" placeholder="Search" @oninput="@(e => EntireGridSearch(e))" value="@text">
+            <button class="oi @searchIcon" @onclick="CHangeTheIcon"></button>
+        </div>
+    @*}*@
+</div>
+}
+
+
+@code {
+
+    [CascadingParameter]
+    public Grid<TItems> grid { get; set; }
+
+    [Parameter]
+    public List<TItems> DataSource { get; set; }
+    public List<TItems> ItemList { get; set; }
+    [Parameter]
+    public Func<TItems, string> Field { get; set; }
+    public static bool IsAllowSearch { get; set; }
+    [Parameter]
+    public bool Search { get; set; }
+
+    private string searchIcon { get; set; }= "oi-magnifying-glass";
+
+    //public string TableSearchOnOFF { get; set; }
+    public string text { get; set; }
+
+
+
+    protected override void OnInitialized()
+    {
+        // text= "Search-ON";
+        //TableSearchOnOFF = text;
+    }
+
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            //IsAllowSearch = false;
+            //AllowSearch();
+
+        }
+    }
+
+    //public void AllowSearch()
+    //{
+    //    if (!IsAllowSearch)
+    //    {
+    //        IsAllowSearch = true;
+    //        text = "Search-OFF";
+    //    }
+    //    else
+    //    {
+    //        IsAllowSearch = false;
+    //        grid.RefreshGrid(ItemList);
+    //        text = "Search-ON";
+    //    }
+
+    //    TableSearchOnOFF = text;
+    //}
+
+    private void EntireGridSearch(ChangeEventArgs changeEventArgs)
+    {
+        searchIcon = "oi-x";
+        text = changeEventArgs.Value.ToString();
+        if (!string.IsNullOrEmpty(text))
+        {
+           ItemList = grid.DataSource.Where(x => (Field(x).ToLower().ToString().Contains(text.ToLower(), StringComparison.InvariantCultureIgnoreCase))).ToList();
+        }
+        else
+        {
+            searchIcon = "oi-magnifying-glass";
+            ItemList = DataSource;
+        }
+        grid.RefreshGrid(ItemList);
+        StateHasChanged();
+
+    }
+    private void CHangeTheIcon()
+    {
+
+        searchIcon = "oi-magnifying-glass";
+        text = "";
+        grid.RefreshGrid(DataSource);
+        StateHasChanged();
+
+    }
+
+}

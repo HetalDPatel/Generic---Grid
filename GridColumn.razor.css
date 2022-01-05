@@ -1,0 +1,28 @@
+﻿
+.table thead th {
+    border: 1px solid var(--table-border);
+}
+td {
+    border: 1px solid var(--table-border);
+
+}
+
+.tableHeader {
+    justify-content: right;
+}
+button {
+    position: relative;
+    left: 18px;
+    top: auto;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: var(--background);
+}
+.oi-beaker{
+
+}
+.oi-menu {
+    color: var(--font-color);
+ 
+}

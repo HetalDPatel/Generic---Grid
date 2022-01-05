@@ -1,0 +1,36 @@
+﻿
+<div class="modal fade show d-block" id="confirm" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-info">
+                <h5 class="modal-title" id="confirm">Info</h5>
+                <button type="button" class="close" aria-label="Close"
+                        @onclick="@(e => CloseTheDialoag(2))">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                You have entered Pagesize in Negative number so its assigned by default to 2.
+            </div>
+            <div class="modal-footer">
+                <button @onclick="@(e => CloseTheDialoag(2))" class="btn btn-secondary">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+
+    [Parameter]
+    public EventCallback<int> OnCloseDialogue { get; set; }
+
+
+
+    public void CloseTheDialoag(int pagenum)
+    {
+        OnCloseDialogue.InvokeAsync(pagenum);
+    }
+}

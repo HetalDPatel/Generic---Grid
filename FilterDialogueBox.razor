@@ -1,0 +1,202 @@
+﻿@typeparam TItems
+
+<div class="modal fade show d-block" id="filterModel" role="dialog" >
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="filterheader">@Title Filters </h5>
+                <button type="button" class="close" aria-label="Close" @onclick="@(e => Close(false))">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="filterBody">
+                    <div class="filtersearchBox">
+                        <input type="text" placeholder="Search" @bind-value="@searchtext" @oninput="@(e => searchValueInFilterDialogue(e))">
+                        <i class="oi oi-magnifying-glass"></i>
+                    </div>
+                    <div class="itemValueInCheckBox">
+                        @*@if (FilterList != null)
+                        {*@
+                            @foreach (var item in FilterList)
+                            {
+                                if (item.ToString() != temp)
+                                {
+                                    <div class="CheckBoxList">
+                                        <input id="checkbox" type="checkbox" checked="@chacked" value="@item.ToString()" @onchange="e => { FilterOnCheckBoxSelection(item.ToString(), e.Value); }" />
+                                        <label for="checkbox">@item</label>
+                                    </div>
+                                    temp = item.ToString();
+                                }
+                            }
+                        @*}
+                        else
+                        {
+                            @foreach (var item in Items)
+                            {
+                                if (item.ToString() != temp)
+                                {
+                                    <div class="CheckBoxList">
+                                        <input id="checkbox" type="checkbox" checked="@chacked" value="@item.ToString()" @onchange="e => { FilterOnCheckBoxSelection(item.ToString(), e.Value); }" />
+                                        <label for="checkbox">@item</label>
+                                    </div>
+                                    temp = item.ToString();
+                                }
+                            }
+                        }*@
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" @onclick="@(e => OkFilterColumn(searchtext))">
+                    OK
+                </button>
+                <button class="btn btn-secondary" @onclick="@(e => Close(false))">
+                    Cancel
+                </button>
+                <button class="btn btn-secondary" @onclick="ClearFilter">
+                    Clear Filter
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code{
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public List<TItems> Items { get; set; }
+
+    public List<TItems> FilterList { get; set; }
+    //[Parameter]
+    //public List<string> Field { get; set; }
+
+    public List<string> checkBoxTextList { get; set; } = new List<string>();
+
+    [Parameter]
+    public EventCallback<bool> Onclose { get; set; }
+    [Parameter]
+    public EventCallback<string> OnOK { get; set; }
+    [Parameter]
+    public EventCallback OnClear { get; set; }
+    [Parameter]
+    public EventCallback<string> OnSelect { get; set; }
+
+    //Value 
+    public bool chacked { get; set; }
+    [Parameter]
+    public bool h { get; set; }
+
+    //value in TextBox of Filter
+    public string searchtext { get; set; }
+
+    //temp varible for the neglact the duplicate value in filter - display checkbox
+    public string temp = "";
+
+    // private bool RefereshFilterItems { get; set; }
+
+    protected override void OnInitialized()
+    {
+        FilterList = new List<TItems>();
+        FilterList = Items;
+
+    }
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (!firstRender)
+        {
+            temp = "";
+        }
+
+    }
+    /// <summary>
+    /// Close() for the Exit Model
+    /// </summary>
+    /// <param name="value"></param>
+    public void Close(bool value)
+    {
+        Onclose.InvokeAsync(value);
+    }
+
+    /// <summary>
+    /// OkFilterColumn() for the Filter
+    /// </summary>
+    /// <param name="value"></param>
+    private void OkFilterColumn(string value)
+    {
+        // RefereshFilterItems = false;
+        OnOK.InvokeAsync(value);
+    }
+
+    private void ClearFilter()
+    {
+        // RefereshFilterItems = false;
+        FilterList = Items;
+        OnClear.InvokeAsync();
+        StateHasChanged();
+
+    }
+
+
+    public void searchValueInFilterDialogue(ChangeEventArgs changeEventArgs)
+    {
+        //RefereshFilterItems = true;
+        string searchText = changeEventArgs.Value.ToString();
+        FilterList = new List<TItems>();
+        if (!string.IsNullOrEmpty(searchText))
+        {
+
+            FilterList = Items.Where(i => i.ToString().ToLower().StartsWith(searchText.ToLower(), StringComparison.InvariantCultureIgnoreCase)).ToList();
+            chacked = true;
+        }
+        else
+        {
+            chacked = false;
+            FilterList = Items;
+        }
+
+    }
+
+    public void FilterOnCheckBoxSelection(string checkBoxValue,object aChecked)
+    {
+        if ((bool)aChecked)
+        {
+            checkBoxTextList.Add(checkBoxValue);
+            //searchtext = checkBoxValue;
+        }
+
+        if (checkBoxTextList != null)
+        {
+            foreach(var i in checkBoxTextList)
+            {
+                OnSelect.InvokeAsync(i.ToString());
+            }
+            checkBoxTextList.Remove(checkBoxValue);
+        }
+
+        StateHasChanged();
+        //if ((bool)aChecked)
+        //{
+        //    if (checkBoxTextList.Contains(checkBoxValue))
+        //    {
+        //        checkBoxTextList.Add(checkBoxValue);
+        //    }
+        //    else
+        //    {
+        //        checkBoxTextList.Add(checkBoxValue);
+        //    }
+        //    searchtext = checkBoxValue;
+        //}
+
+        //if (checkBoxTextList != null)
+        //{
+        //    foreach (var i in checkBoxTextList)
+        //    {
+        //        OnSelect.InvokeAsync(i.ToString());
+        //    }
+        //}
+    }
+
+}

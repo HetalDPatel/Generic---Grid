@@ -1,0 +1,246 @@
+﻿@typeparam TItems
+@using System.Linq.Expressions
+<CascadingValue Value="this">
+    @Template
+</CascadingValue>
+@code
+{
+    [Parameter]
+    public Expression<Func<TItems, object>> Field { get; set; }
+    private Func<TItems, object> compiledExpression;
+    //private Func<TItems, object> FSSField;
+    private Expression lastCompiledExpression;
+    [Parameter]
+    public RenderFragment<TItems> Template { get; set; }
+    [Parameter]
+    public string Format { get; set; }
+    private RenderFragment<TItems> cellTemplate;
+    [CascadingParameter]
+    public Grid<TItems> grid { get; set; }
+    [Parameter]
+    public string HeaderText { get; set; }
+    [Parameter]
+    public string Width { get; set; }
+    public bool AllowSort { get; set; }
+    [Parameter]
+    public RenderFragment HeaderTemplate { get; set; }
+
+    [Parameter]
+    public int FilterType { get; set; } = (int)Filter.IncolumnFilter;
+
+    public List<TItems> Items { get; set; }
+
+
+    public string InlineCss { get; set; }
+
+    protected override void OnInitialized()
+    {
+        AllowSort = grid.AllowSorting;
+        Isfilter = true;
+        Items = grid.GetTheRecord();
+        checkBoxList = new List<TItems>();
+        InlineCss = CSSBuilder();
+        grid.AddColumn(this);
+    }
+    protected override void OnParametersSet()
+    {
+        if (lastCompiledExpression != Field)
+        {
+            compiledExpression = Field?.Compile();
+            lastCompiledExpression = Field;
+        }
+    }
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (!firstRender)
+        {
+            //CloseAllFilterDialogue();
+            ShowSortArrow = false;
+        }
+    }
+
+    internal RenderFragment<TItems> GridRow
+    {
+        get
+        {
+            return cellTemplate = (rowData => builder =>
+            {
+                if (compiledExpression != null)
+                {
+                    var value = compiledExpression(rowData);
+                    Type typeOfValue = value.GetType();
+                    if (typeOfValue != typeof(DateTime))
+                    {
+                        builder.AddContent(1, value);
+                    }
+                    else
+                    {
+                        var formattedValue = string.IsNullOrEmpty(Format) ? value?.ToString() : string.Format("{0:" + Format + "}", value);
+                        builder.AddContent(2, formattedValue);
+                    }
+                }
+                else
+                {
+                    builder.AddContent(3, Template, rowData);
+                }
+
+            });
+        }
+    }
+    public string GetCss()
+    {
+        return InlineCss;
+    }
+    private string CSSBuilder()
+    {
+        var inlineCss = "";
+        if (TextAlign != null)
+        {
+            if (TextAlign.ToLower().ToString() == "right")
+            {
+                inlineCss += "text-align:" + "right" + ";";
+            }
+            else if (TextAlign.ToLower().ToString() == "left")
+            {
+                inlineCss += "text-align:" + "left" + ";";
+            }
+            else if (TextAlign.ToLower().ToString() == "center")
+            {
+                inlineCss += "text-align:" + "center" + ";";
+            }
+            else
+            {
+                inlineCss += "text-align:" + "center" + ";";
+            }
+        }
+        if (!string.IsNullOrWhiteSpace(Width))
+        {
+            inlineCss += "width:" + Width + ";";
+        }
+        return inlineCss;
+    }
+    public void OnSortDirection()
+    {
+        if (AllowSort)
+        {
+            ShowSortArrow = true;
+            if (arrowDirection == "oi-chevron-top")
+            {
+                arrowDirection = "oi-chevron-bottom";
+                grid.DataSource.Sort((x, y) => compiledExpression(y).ToString().ToLower().CompareTo(compiledExpression(x).ToString().ToLower()));
+            }
+            else
+            {
+                arrowDirection = "oi-chevron-top";
+                grid.DataSource.Sort((x, y) => compiledExpression(x).ToString().ToLower().CompareTo(compiledExpression(y).ToString().ToLower()));
+            }
+            grid.RefreshGrid(grid.DataSource);
+        }
+    }
+
+    public bool Isfilter { get; set; }
+    public bool IsFilterDialogue { get; set; }
+    public List<string> FilterList
+    {
+        get; set;
+    }
+    [Parameter]
+    public string TextAlign { get; set; }
+
+    public bool ShowSortArrow { get; set; }
+
+
+    public List<TItems> ItemList { get; set; }
+
+    //checkBoxList for the storin records of checkBox selection
+    public List<TItems> checkBoxList { get; set; }
+
+    //bool value for the CheckBox Selected Record display on table
+    public bool IsCheckBoxFilter { get; set; }
+
+    public string arrowDirection { get; set; } = "oi-chevron-top";
+    public bool b { get; set; }
+
+    public Type TypeOfField { get; set; }
+    public string value;
+
+    public void GetFilteredItems(ChangeEventArgs changeEventArgs)
+    {
+        string searchText = changeEventArgs.Value.ToString();
+        if (!string.IsNullOrEmpty(searchText))
+        {
+            ItemList = Items.Where(x => (compiledExpression(x).ToString().ToLower().StartsWith(searchText.ToLower(), StringComparison.InvariantCultureIgnoreCase))).ToList();
+        }
+        else
+        {
+            ItemList = Items;
+        }
+        grid.RefreshGrid(ItemList);
+    }
+
+    public void ShowFilterDialogue(bool value)
+    {
+        IsFilterDialogue = value;
+        FilterList = new List<string>();
+        foreach (var i in grid.DataSource)
+        {
+            FilterList.Add(compiledExpression(i).ToString());
+        }
+        FilterList.Sort((x, y) => x.ToLower().ToString().CompareTo(y.ToLower().ToString()));
+        StateHasChanged();
+    }
+
+    public void SearchTextInFilter(string searchText)
+    {
+        ShowFilterDialogue(!Isfilter);
+        if (IsCheckBoxFilter)
+        {
+            grid.RefreshGrid(checkBoxList);
+        }
+        else
+        {
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                ItemList = grid.DataSource.Where(x => (compiledExpression(x).ToString().ToLower().StartsWith(searchText.ToLower(), StringComparison.InvariantCultureIgnoreCase))).ToList();
+            }
+            else
+            {
+                ItemList = grid.DataSource;
+            }
+            grid.RefreshGrid(ItemList);
+        }
+    }
+    public void ClearFilter()
+    {
+        checkBoxList = new List<TItems>();
+        ShowFilterDialogue(!Isfilter);
+        grid.RefreshGrid(Items);
+    }
+
+    public void FilterOnCheckBoxSelection(string searchText)
+    {
+        ItemList = grid.DataSource.Where(x => (compiledExpression(x).ToString().ToLower().Equals(searchText.ToLower(), StringComparison.InvariantCultureIgnoreCase))).ToList();
+        checkBoxList.AddRange(ItemList);
+        //if (checkBoxList != null && checkBoxList.Count>1)
+        //{
+        //    foreach(var c in checkBoxList)
+        //    {
+        //        if (!c.Equals(ItemList))
+        //        {
+        //            IsCheckBoxFilter = true;
+        //            checkBoxList.Remove(c);
+        //        }
+        //    }
+        //}
+        //else
+        //{
+        //    IsCheckBoxFilter = true;
+        //}
+
+        IsCheckBoxFilter = true;
+
+    }
+
+
+}
+

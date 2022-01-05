@@ -1,0 +1,144 @@
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\GenericGridComponent_RCL.deps.json
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\GenericGridComponent_RCL.dll
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\ref\GenericGridComponent_RCL.dll
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\GenericGridComponent_RCL.pdb
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.AssemblyInfoInputs.cache
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.AssemblyInfo.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.csproj.CoreCompileInputs.cache
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.RazorComponent.input.cache
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\Grid.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.RazorComponent.output.cache
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\GenericGridComponent_RCL.dll
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.TagHelpers.input.cache
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.TagHelpers.output.cache
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.RazorCoreGenerate.cache
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\Grid.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\staticwebassets\GenericGridComponent_RCL.StaticWebAssets.Manifest.cache
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\staticwebassets\GenericGridComponent_RCL.StaticWebAssets.xml
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\bundle\GenericGridComponent_RCL.styles.css
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.RazorTargetAssemblyInfo.cache
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.dll
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\ref\GenericGridComponent_RCL.dll
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.pdb
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\GridSearch.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\GridSearch.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\GenericGridComponent_RCL.StaticWebAssets.xml
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\projectbundle\GenericGridComponent_RCL.bundle.scp.css
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\Grid.razor.rz.scp.css
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\GridSearch.razor.rz.scp.css
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\GridColumn.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\GridColumn.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\HeaderTemplate.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\HeaderTemplate.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\Template.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\Template.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\GridColumn.razor.rz.scp.css
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\HeaderTemplate.razor.rz.scp.css
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\Template.razor.rz.scp.css
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\FilterDialogueBox.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\FilterDialogueBox.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\FilterDialogueBox.razor.rz.scp.css
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\GenericGridComponent_RCL.StaticWebAssets.xml
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\GenericGridComponent_RCL.deps.json
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\GenericGridComponent_RCL.dll
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\ref\GenericGridComponent_RCL.dll
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\GenericGridComponent_RCL.pdb
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.csprojAssemblyReference.cache
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.AssemblyInfoInputs.cache
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.AssemblyInfo.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.csproj.CoreCompileInputs.cache
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.RazorComponent.input.cache
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\FilterDialogueBox.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\Grid.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\GridColumn.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\GridSearch.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\HeaderTemplate.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\Template.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.RazorComponent.output.cache
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\GenericGridComponent_RCL.dll
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.TagHelpers.input.cache
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.TagHelpers.output.cache
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.RazorCoreGenerate.cache
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\FilterDialogueBox.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\Grid.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\GridColumn.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\GridSearch.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\HeaderTemplate.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\Template.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\staticwebassets\GenericGridComponent_RCL.StaticWebAssets.Manifest.cache
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\staticwebassets\GenericGridComponent_RCL.StaticWebAssets.xml
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\FilterDialogueBox.razor.rz.scp.css
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\Grid.razor.rz.scp.css
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\GridColumn.razor.rz.scp.css
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\GridSearch.razor.rz.scp.css
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\HeaderTemplate.razor.rz.scp.css
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\Template.razor.rz.scp.css
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\bundle\GenericGridComponent_RCL.styles.css
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\projectbundle\GenericGridComponent_RCL.bundle.scp.css
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.RazorTargetAssemblyInfo.cache
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.dll
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\ref\GenericGridComponent_RCL.dll
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.pdb
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\MessageDialogueBox.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\MessageDialogueBox.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\MessageDialogueBox.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\MessageDialogueBox.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\GridPageSettings.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\GridPageSettings.razor.g.cs
+Z:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.csprojAssemblyReference.cache
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\GridPageSettings.razor.g.cs
+E:\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\GridPageSettings.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\GenericGridComponent_RCL.StaticWebAssets.xml
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\GenericGridComponent_RCL.deps.json
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\GenericGridComponent_RCL.dll
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\ref\GenericGridComponent_RCL.dll
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\bin\Debug\net5.0\GenericGridComponent_RCL.pdb
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.csproj.AssemblyReference.cache
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.GeneratedMSBuildEditorConfig.editorconfig
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.AssemblyInfoInputs.cache
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.AssemblyInfo.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.csproj.CoreCompileInputs.cache
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.RazorComponent.input.cache
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\GridPageSettings.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\MessageDialogueBox.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\FilterDialogueBox.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\Grid.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\GridColumn.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\GridSearch.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\HeaderTemplate.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\Template.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.RazorComponent.output.cache
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\RazorDeclaration\GenericGridComponent_RCL.dll
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.TagHelpers.input.cache
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.TagHelpers.output.cache
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.RazorCoreGenerate.cache
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\GridPageSettings.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\MessageDialogueBox.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\FilterDialogueBox.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\Grid.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\GridColumn.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\GridSearch.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\HeaderTemplate.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\Razor\Template.razor.g.cs
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\staticwebassets\GenericGridComponent_RCL.StaticWebAssets.Manifest.cache
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\staticwebassets\GenericGridComponent_RCL.StaticWebAssets.xml
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\FilterDialogueBox.razor.rz.scp.css
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\Grid.razor.rz.scp.css
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\GridColumn.razor.rz.scp.css
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\GridSearch.razor.rz.scp.css
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\HeaderTemplate.razor.rz.scp.css
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\Template.razor.rz.scp.css
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\bundle\GenericGridComponent_RCL.styles.css
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\scopedcss\projectbundle\GenericGridComponent_RCL.bundle.scp.css
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.RazorTargetAssemblyInfo.cache
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.dll
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\ref\GenericGridComponent_RCL.dll
+F:\Co-op projects\Learning\Assignment-3\GenericGridComponent_RCL\GenericGridComponent_RCL\obj\Debug\net5.0\GenericGridComponent_RCL.pdb

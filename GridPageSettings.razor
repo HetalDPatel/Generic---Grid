@@ -1,0 +1,16 @@
+﻿
+@Childcontent
+@code {
+    [Parameter]
+    public int PageSize { get; set; }
+    [CascadingParameter]
+
+    public IGrid grid { get; set; }
+    [Parameter]
+    public RenderFragment Childcontent { get; set; }
+
+    protected override void OnInitialized()
+    {
+        grid.GetPageSize(PageSize);
+    }
+}

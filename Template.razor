@@ -1,0 +1,16 @@
+﻿@*@typeparam TItems
+
+
+@code{
+    [Parameter]
+    public RenderFragment childContent { get; set; }
+    [Parameter]
+    public List<TItems> DataSource { get; set; }
+    [CascadingParameter]
+    public GridColumn<TItems> grid { get; set; }
+
+    protected override void OnInitialized()
+    {
+        grid.AddTemplate(this);
+    }
+}*@

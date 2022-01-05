@@ -1,0 +1,86 @@
+﻿#filterModel {
+    max-height: 800px;
+    z-index: 1000000001;
+    width: auto;
+    left: initial;
+    top: 160px;
+    height: 800px;
+    overflow: visible;
+    flex-direction: column;
+}
+.itemValueInCheckBox {
+    text-align: start;
+    margin-top: 10px;
+    max-height: 100px;
+    overflow-y: auto;
+    width: 90%;
+}
+
+.CheckBoxList {
+  position:relative;
+    /*    height: 200px;*/
+    margin-top: 5px;
+    /*  min-height: 160px;
+    overflow-y: auto;*/
+}
+
+input[type="checkbox"]:checked{
+/*    margin-left: 30px;*/
+    background-color: #0078d6;
+    border-color: #0078d6;
+    color: #fff;
+
+}
+label {
+    font-size: 0.8rem;
+    font-weight: 100;
+    font-family: sans-serif;
+}
+h5 {
+    font-size: 1rem;
+}
+
+.close {
+    float: right;
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 06;
+    color:#072c79;
+}
+.modal-title {
+    margin-bottom: 0;
+    line-height: 2;
+    
+}
+.modal-content {
+    background-color: var(--background);
+
+    color:var(--font-color);
+}
+
+
+.modal.show .modal-dialog {
+    transform:none;
+    width: 300px;
+    top: 30px;
+    right: 150px;
+}
+.oi-magnifying-glass {
+    color: var(--backgroundr);
+    right: 30px;
+    top: 4px;
+    
+}
+input[type="checkbox"] {
+    margin-left: 15px;
+    background-color: var(--table-border);
+    border-color: var(--background);
+    color: #fff;
+}
+input[type="text"] {
+    width: 230px;
+    margin: 0;
+}

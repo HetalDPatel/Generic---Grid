@@ -1,0 +1,333 @@
+﻿@typeparam TItems
+@using System.Reflection
+
+
+<div style="display:none">
+    <CascadingValue IsFixed="true" Value="this">
+        @GridColumns
+    </CascadingValue>
+</div>
+<div class="gridClass">
+    <select @onchange="ChangingTheme">
+        <option value="" selected disabled>Select Theme</option>
+        <option value="@LightTheme">Light</option>
+        <option value="@DarkTheme">Dark</option>
+    </select>
+    <div class="page @SetTheme()">
+        <CascadingValue Value="this">
+            @GridSearchSetting
+        </CascadingValue>
+        <div class="table-responsive-sm grid-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        @foreach (var column in columns)
+                        {
+                            <th style=@column.InlineCss>
+                                <div @onclick="column.OnSortDirection">
+
+                                    @if (column.HeaderTemplate != null)
+                                    {
+                                        @column.HeaderTemplate
+                                    }
+                                    else
+                                    {
+                                        @column.HeaderText
+                                    }
+                                    @if (AllowSorting)
+                                    {
+                                        @if (column.ShowSortArrow)
+                                        {
+                                            <span class="oi @column.arrowDirection ml-1"></span>
+                                        }
+                                    }
+                                </div>
+
+                                @if (AllowFilter)
+                                {
+                                    if (column.FilterType != 0)
+                                    {
+                                        <button class="oi oi-menu filtericon" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="filter" @onclick="@(e => column.ShowFilterDialogue(column.Isfilter))"></button>
+                                        @if (column.IsFilterDialogue)
+                                        {
+                                            <FilterDialogueBox Title="@column.HeaderText" Items="column.FilterList" Onclose="CloseCurrentFilter" OnOK="column.SearchTextInFilter" OnClear="column.ClearFilter" OnSelect="column.FilterOnCheckBoxSelection"></FilterDialogueBox>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <input class="form-control" @oninput="@(e => column.GetFilteredItems(e))" />
+                                    }
+                                }
+                            </th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        if (ItemList != null)
+                        {
+                            foreach (var item in ItemList)
+                            {
+                                //Use @key to help the diff algorithm when updating the collection
+                                <tr @key="item.GetHashCode()">
+                                    @foreach (var column in columns)
+                                    {
+                                        <td style=@column.InlineCss>
+                                            @column.GridRow(item)
+                                        </td>
+                                    }
+                                </tr>
+                            }
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        @if (AllowPaging)
+        {
+            @if (PageSize >= 1)
+            {
+                <div class="gridpaging">
+                    @*Paging Components*@
+                    <button class="first-last-btn" @onclick="@(e => NavigatePageTo("first"))">&laquo;</button>
+                    <button class="prev-next-btn" @onclick="@(e => NavigatePageTo("prev"))"> &#8249;</button>
+                    @* Loop for the creating Buttons as per the pages*@
+                    @for (int i = 0; i < TotalPages; i++)
+                    {
+                        var pageNumber = i;
+                        <button class="@(CurrentPage == pageNumber ? "activeBtn" : "nonActiveBtn")" @onclick="@(e => UpdateListAsPerPage(pageNumber))">@(i + 1)</button>
+                    }
+                    <button class="prev-next-btn" @onclick="@(e => NavigatePageTo("next"))">&#8250; </button>
+                    <button class="first-last-btn" @onclick="@(e => NavigatePageTo("last"))">&raquo;</button>
+                    <span class="totalPageDisplay">Page @(CurrentPage + 1) of @(TotalPages) (Total:@DataSource.Count items)</span>
+                </div>
+            }
+            else
+            {
+                @if (!showMessageDialogue)
+                {
+                    <MessageDialogueBox OnCloseDialogue="CalculatePage"></MessageDialogueBox>
+                    <div class="gridpaging">
+                        @*Paging Components*@
+                        <button class="first-last-btn " @onclick="@(e => NavigatePageTo("first"))" d>&laquo;</button>
+                        <button class="prev-next-btn" @onclick="@(e => NavigatePageTo("prev"))"> &#8249;</button>
+                        @* Loop for the creating Buttons as per the pages*@
+                        @for (int i = 0; i < TotalPages; i++)
+                        {
+                            var pageNumber = i;
+                            <button class="@(CurrentPage == pageNumber ? "activeBtn" : "nonActiveBtn") m-1 page-num-btn" @onclick="@(e => UpdateListAsPerPage(pageNumber))">@(i + 1)</button>
+                        }
+                        <button class="prev-next-btn" @onclick="@(e => NavigatePageTo("next"))">&#8250;</button>
+                        <button class="first-last-btn " @onclick="@(e => NavigatePageTo("last"))">&raquo;</button>
+                        <span class="totalPageDisplay">Page @(CurrentPage + 1) of @(TotalPages) (Total:@DataSource.Count items)</span>
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public RenderFragment GridColumns { get; set; }
+
+    [Parameter]
+    public bool AllowFilter { get; set; }
+
+    [Parameter]
+    public TItems obj { get; set; }
+
+    [Parameter]
+    public bool AllowSorting { get; set; }
+
+    private readonly List<GridColumn<TItems>> columns = new List<GridColumn<TItems>>();
+    // public  GridPageSettings gridPage = new GridPageSettings();
+
+
+    //private readonly List<Template<TItems>> template = new List<Template<TItems>>();
+
+    // GridColumn uses this method to add a column
+    internal void AddColumn(GridColumn<TItems> column)
+    {
+        columns.Add(column);
+    }
+    //internal void GetPageSize(GridPageSettings pagesize)
+    //{
+    //    gridPage = pagesize;
+    //}
+
+    [Parameter]
+
+    public RenderFragment GridSearchSetting { get; set; }
+    [Parameter]
+
+    public RenderFragment GridPageSetting { get; set; }
+
+    //intializing list using typeparam
+    [Parameter]
+    public List<TItems> DataSource { get; set; }
+
+    public List<TItems> ItemList { get; set; }
+    MemberInfo[] memberinfo;
+
+
+    // Parameters for the Paging
+    [Parameter]
+    public int PageSize { get; set; }
+
+    [Parameter]
+    public bool AllowPaging { get; set; }
+    public int TotalPages { get; set; }
+    public int CurrentPage { get; set; }
+
+    //// Varibles for the Theme
+    private string Theme;
+    private static string LastSelectedTheme;
+    private string LightTheme = "Light";
+    private string DarkTheme = "Dark";
+
+    public bool showMessageDialogue { get; set; }
+
+    public List<TItems> GetTheRecord()
+    {
+
+        return DataSource;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        await CalculatePage(PageSize);
+    }
+
+    // Render after delete Function performed
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            UpdateListAsPerPage();
+            StateHasChanged();
+
+        }
+
+    }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        if (DataSource != null && DataSource.Count > 0)
+        {
+            Type typeOfItem = this.DataSource[0].GetType();
+            memberinfo = typeOfItem.GetMembers();
+        }
+
+    }
+
+    public async Task CalculatePage(int pagesize)
+    {
+        if (pagesize < 0)
+        {
+            showMessageDialogue = false;
+            //PageSize =2 ;
+        }
+        else if (pagesize == 0)
+        {
+            showMessageDialogue = false;
+        }
+        else
+        {
+            showMessageDialogue = true;
+            PageSize = pagesize;
+        }
+        if (showMessageDialogue)
+        {
+            ItemList = DataSource.Take(PageSize).ToList();
+            TotalPages = (int)Math.Ceiling((DataSource.Count() / (decimal)PageSize));
+        }
+        else
+        {
+            PageSize = 2;
+            ItemList = DataSource.Take(PageSize).ToList();
+            TotalPages = (int)Math.Ceiling((DataSource.Count() / (decimal)PageSize));
+        }
+
+    }
+
+    public void UpdateListAsPerPage(int pageNumber = 0)
+    {
+        ItemList = DataSource.Skip(pageNumber * PageSize).Take(PageSize).ToList();
+        TotalPages = (int)Math.Ceiling((DataSource.Count() / (decimal)PageSize));
+        CurrentPage = pageNumber;
+        this.StateHasChanged();
+    }
+
+    public void NavigatePageTo(string btnDirection)
+    {
+        if (btnDirection == "prev" && (CurrentPage > 0 || CurrentPage >= TotalPages - 1))
+        {
+            CurrentPage -= 1;
+        }
+        if (btnDirection == "next" && CurrentPage < TotalPages - 1)
+        {
+            CurrentPage += 1;
+        }
+        if (btnDirection == "first")
+        {
+            CurrentPage = 0;
+        }
+        if (btnDirection == "last")
+        {
+            CurrentPage = TotalPages - 1;
+        }
+
+        UpdateListAsPerPage(CurrentPage);
+    }
+
+
+    public void RefreshGrid(List<TItems> itemlist)
+    {
+        DataSource = itemlist;
+        UpdateListAsPerPage();
+        this.StateHasChanged();
+    }
+
+    private string SetTheme()
+    {
+        if (Theme == DarkTheme)
+        {
+            return "dark-mode";
+        }
+        else if (Theme == LightTheme)
+        {
+            return "light";
+        }
+        else
+        {
+            if (LastSelectedTheme == DarkTheme)
+            {
+                return "dark-mode";
+            }
+            else
+            {
+                return "light";
+            }
+        }
+    }
+    private void ChangingTheme(ChangeEventArgs e)
+    {
+        Theme = e.Value.ToString();
+
+        LastSelectedTheme = Theme;
+    }
+
+    public void CloseCurrentFilter(bool value)
+    {
+        foreach (var c in columns)
+        {
+            c.IsFilterDialogue = false;
+        }
+    }
+
+
+}
